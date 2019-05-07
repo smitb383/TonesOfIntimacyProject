@@ -12,6 +12,15 @@ The first part of this project (Skeleton Depth Mask Altered Folder) is a program
 
 In addition, this project records the sound files of each interaction to a folder in the processing folder (called recordings). I then build a node application that watched this local folder for new files that were added to the folder using the chokadir and jetpack node modules. I pushed these audio recordings to firebase using the firebase admin node module and google cloud modules for node app development. I then stored the reference URL for these Audio recordings to a database in firebase associated with the project. (this part of the project is in the folder called Brooke App)
 
+**********NOTES ABOUT THIS FOLDER AND CODE*******************
+I DID NOT INCLUDE MY DEVELOPER KEY (WHICH IS A JSON FILE YOU DOWLOAD FROM FIREBASE) THIS IS INDIVIDAL TO EACH PROJECT AND PERSON AND IF YOU WISH TO DO A SIMIALR PROJECT YOU NEED TO GENERATE THIS YOURSLEF 
+- THE NODE MODULES TO RUN THIS CODE ARE ALSO NOT INCLUDED, THE ESSENTIAL MUDUELS ARE: 
+- chokadir 
+- Jetpack
+- Firebase 
+- Firebase admin 
+
+
 Afterwards I created a page using the firebase web development tool kit on our projects website (designed by Josefina Biscailuz Santamaria) that dowloaded each of these audio recordings from the installation as they were recorded directly to the website with the number of each recording. We handed out cards to participants of the instillation so that they could go to the website and listen to and download their audio recording as soon as they were done participating in the installation. 
 
 The project here includes: 
@@ -23,9 +32,5 @@ This program will not properly function on other devices because it looks fro a 
 
 The node models required to create such a node application are: 
 
-- chokadir 
-- Jetpack
-- Firebase admin 
-- Firebase 
 
 Visit the Life website at: http://tonesofintimacy.glitch.me
