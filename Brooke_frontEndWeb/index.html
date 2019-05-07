@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tones of Intimacy</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- <link href="main.js"> -->
+    <link rel="stylesheet" href="https://use.typekit.net/dpi8btw.css">
+</head>
+
+<body>
+    <div class="AllGrid">
+
+        <div class="title">
+            <a id="titleA" href="../index.html">
+                <h1>Tones of</h1>
+                <h1 id="second">Intimacy</h1>
+            </a>
+        </div>
+        <div class="nav">
+            <a href="../casestudy/index.html">Case Study</a>
+            <a href="../team/index.html">Team</a>
+            <a id="selected" href="#">Audio</a>
+        </div>
+
+        <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+        <script>
+            // // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyBXwSfpXY1gBTsIFePNaxOIVlMPwgCXJd4",
+                authDomain: "windowstrial2-6e3f2.firebaseapp.com",
+                databaseURL: "https://windowstrial2-6e3f2.firebaseio.com",
+                projectId: "windowstrial2-6e3f2",
+                storageBucket: "windowstrial2-6e3f2.appspot.com",
+                messagingSenderId: "96924476265"
+            };
+            firebase.initializeApp(config);
+
+            //////////////////PULLING INFO FROM DATABASE///////////////
+            var database = firebase.database();
+            var audioRef = firebase.database().ref('soundFiles/');
+            audioRef.on('child_added', function (data) {
+                createNewAudio(data.key, data.val());
+            });
+            //////////////////CREATE NEW AUDIO ELEMENT IN THE HTML WITH SOURCE FROM FIREBASE STORAGE///////////////
+            //set variables for grid 
+            var gridRowStart = 2;
+            var gridRowEnd = 3;
+            var gridRowStart2 = 3;
+            var gridRowEnd2 = 4;
+            var grid = document.getElementsByClassName("AllGrid")[0];
+
+            function createNewAudio(key, url) {
+                console.log(url.name);
+                //div for audio and number elements together 
+                var div1 = document.createElement('div');
+                div1.setAttribute('class', 'audios audio' + url.number);
+                //sound element itself 
+                var sound = document.createElement('audio');
+                sound.controls = 'controls';
+                sound.id = 'audio-player';
+                sound.src = url.name;
+                sound.type = 'audio/wav';
+                var divSound = document.createElement('div');
+                divSound.setAttribute('class', "player");
+                divSound.style.cssText = "grid-column-start: 2;grid-column-end: 4;grid-row-start: 2;grid-row-end: 2;";
+                divSound.appendChild(sound);
+                var number = document.createElement('h2');
+                var t = document.createTextNode(url.number);
+                number.appendChild(t);
+                var divNum = document.createElement('div');
+                divNum.setAttribute('class', 'number');
+                divNum.appendChild(number);
+                divNum.style.cssText = "grid-column-start: 1;grid-column-end: 1;grid-row-start: 1;grid-row-end: 2;"
+                div1.appendChild(divNum);
+                div1.appendChild(divSound);
+
+                //set style in grid for each audio element 
+                //if its an off nummber
+                if (url.number % 2 != 0) {
+                    div1.style.cssText =
+                        "grid-column-start:3; grid-column-end: 5";
+                    div1.style.setProperty("grid-row-start", gridRowStart);
+                    div1.style.setProperty("grid-row-end", gridRowEnd);
+
+                } else {
+                    //if its an even number
+                    div1.style.cssText =
+                        "grid-column-start:7; grid-column-end: 9;";
+                    div1.style.setProperty("grid-row-start", gridRowStart2);
+                    div1.style.setProperty("grid-row-end", gridRowEnd2);
+                }
+
+                console.log(grid);
+
+                grid.appendChild(div1);
+                if (url.number % 2 != 0) {
+                    gridRowStart += 2;
+                    gridRowEnd += 2;
+                    console.log("grid row start ODD:" + gridRowStart);
+                    console.log("grid row END ODD:" + gridRowEnd);
+                } else {
+                    gridRowStart2 += 2;
+                    gridRowEnd2 += 2;
+                    console.log("grid row start EVEN:" + gridRowStart2);
+                    console.log("grid row END EVEN:" + gridRowEnd2);
+                }
+                grid.style.cssText =
+                    "display: grid;grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;grid-template-rows: 5% ;margin-bottom: -10px;";
+
+            }
+        </script>
+
+        <body>
+
+
+</html>

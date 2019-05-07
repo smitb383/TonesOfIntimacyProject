@@ -1,0 +1,213 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url("backg.svg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Grid */
+
+.AllGrid {
+    display: grid;
+    grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+    grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+    margin-bottom: -40px;
+}
+
+/* .AllGrid>div {
+    background: #eee;
+}
+
+.AllGrid>div:nth-child(odd) {
+    background: #ddd;
+} */
+
+.title {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    margin-left: 30px;
+    /* border: solid 1px red; */
+    margin-top: -25px;
+}
+
+.nav {
+    grid-column-start: 8;
+    grid-column-end: 11;
+    grid-row-start: 1;
+    grid-row-end: 1;
+
+    text-align: right;
+    padding: 10px;
+}
+
+.audios {
+    display: grid;
+    grid-template-columns: auto 4;
+    grid-template-rows: auto 2;
+}
+
+.number {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.player {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 2;
+}
+
+.audio1 {
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+
+.audio3 {
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 8;
+    grid-row-end: 9;
+}
+
+.audio2 {
+    grid-column-start: 7;
+    grid-column-end: 9;
+    grid-row-start: 5;
+    grid-row-end: 6;
+}
+
+.audio4 {
+    grid-column-start: 7;
+    grid-column-end: 9;
+    grid-row-start: 9;
+    grid-row-end: 10;
+}
+
+
+
+/* Page Title */
+
+h1 {
+    font-family: ff-dax-pro-condensed, sans-serif;
+    /* font-weight: 700; */
+    font-weight: 900;
+    font-style: italic;
+    font-size: 50px;
+    letter-spacing: 5px;
+    color: black;
+
+}
+
+#second {
+    margin-left: 200px;
+    margin-top: -45px;
+}
+
+/* Page Content */
+
+h2 {
+    font-family: ff-dax-pro-condensed,
+        sans-serif;
+    /* font-weight: 700; */
+    font-weight: 1000;
+    font-style: italic;
+    font-size: 100px;
+    /* letter-spacing: 5px; */
+    /* border: 1px solid blue; */
+    margin: -10px;
+}
+
+p {
+    font-family: halogen, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+
+    /* background: white; */
+    padding: 5px;
+    /* box-shadow: 5px 5px 8px 5px rgba(255,0,0, 1); */
+
+    /* height:auto; */
+}
+
+
+/* Nav */
+
+a {
+    text-decoration: none;
+}
+
+.nav>a {
+    font-family: halogen, sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 25px;
+    color: white;
+    padding: 5px;
+    text-shadow: 1px 1px black,
+        -1px -1px black,
+        1px -1px black,
+        -1px 1px black;
+    letter-spacing: 1px;
+}
+
+.nav>a:hover {
+    font-family: halogen,
+        sans-serif;
+    font-weight: 800;
+    font-style: italic;
+    font-size: 25px;
+    color: black;
+    padding: 5px;
+    text-shadow: none;
+}
+
+#selected {
+    font-family: halogen, sans-serif;
+    font-weight: 800;
+    font-style: italic;
+    font-size: 25px;
+    color: black;
+    padding: 5px;
+    text-shadow: none;
+}
+
+.bios>a {
+    font-family: halogen, sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 25px;
+    color: white;
+    padding: 5px;
+    text-shadow: 1px 1px black,
+        -1px -1px black,
+        1px -1px black,
+        -1px 1px black;
+    letter-spacing: 1px;
+}
+
+.bios>a:hover {
+    font-family: halogen,
+        sans-serif;
+    font-weight: 800;
+    font-style: italic;
+    font-size: 25px;
+    color: black;
+    padding: 5px;
+    text-shadow: none;
+}
